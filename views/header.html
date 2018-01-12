@@ -1,0 +1,29 @@
+		<!-- header start -->
+		<!-- ================== -->
+		<header class="header" id="header">
+			<nav class="header__nav">
+				<button class="menu-btn" ng-click="toggleMenu($event)"></button>
+				<div class="nav-wrapper slide" ng-show="menuOpened">
+					<div class="logo-menu">
+						<!-- active class for current menu-item -->
+						<a ui-sref="app" class="logo-menu__link" ng-class="{ active: isActive('/') }">Рекламное агенство "Возможно всё"</a>
+					</div>
+					<ul class="menu">
+						<li class="menu__item"><a ui-sref="app.services" class="menu__link" ng-class="{ active: isActive('/services') }">Услуги</a></li>
+						<li class="menu__item"><a ui-sref="app.portfolio" class="menu__link" ng-class="{ active: isActive('/portfolio') }">Портфолио</a></li>
+						<li class="menu__item" ng-mouseover="overSubmenu()" ng-mouseleave="hideSubmenu()"><a ui-sref="app.order" class="menu__link" ng-class="{ active: isActive('/order') || isActive('/contacts')}">Контакты</a>
+							<ul class="submenu animate-show-hide">
+								<li class="submenu__item"><a ui-sref="app.order" class="submenu__link" ng-class="{ active: isActive('/order') }">Оформить заказ</a></li>
+								<li class="submenu__item"><a ui-sref="app.contacts" class="submenu__link" ng-class="{ active: isActive('/contacts') }">Карта</a></li>
+							</ul>
+						</li>
+					</ul>
+					<div class="search">
+						<input type="text" placeholder="Поиск..." class="search__text-field input" ng-model="mainService.search">
+						<button ui-sref="app.search" type="submit" class="search__button btn shadow" ng-click="mainService.goToResults()">Поиск</button>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<!-- header end -->
+		<!-- ================== -->

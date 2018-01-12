@@ -1,0 +1,13 @@
+{
+  "name": "ad-agency",
+  "version": "1.0.0",
+  "description": "angular app",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.11",
+    "angular": "^1.6.7",
+    "angular-animate": "^1.6.7",
+    "http-server": "^0.10.0"
+  },
+  "devDependencies": {},
+  "author": "Maryna Karpovets"
+}

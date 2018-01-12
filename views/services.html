@@ -1,0 +1,23 @@
+		<!-- services start -->
+		<!-- ================== -->
+		<section id="services" class="services container section clearfix">
+			<h2 class="services__header">Услуги</h2>
+			<div class="service col" ng-repeat="service in data.services">
+				<div class="service-item" ng-click="showModal=true">
+					<img src="{{service.img}}" alt="{{service.header}}" class="service-item__img">
+					<h3 class="service-item__header">{{service.header}}</h3>
+				</div>
+				<div class="modal" ng-show="showModal">
+					<div class="modal__content">
+						<div class="modal__header">
+							<h3 class="modal__title">{{service.header}}</h3>
+							<button type="button" class="modal__close-btn" ng-click="showModal=false">x</button>
+						</div>
+						<img src="{{service.img}}" alt="{{service.header}}" class="modal__img">
+						<p class="modal__description" ng-bind-html="trust(service.description)"></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- services еnd -->
+		<!-- ================== -->

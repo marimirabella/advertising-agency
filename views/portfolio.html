@@ -1,0 +1,50 @@
+		<!-- portfolio start -->
+		<!-- ================== -->
+		<section id="portfolio" class="portfolio section clearfix">
+			<h2 class="portfolio__header">Портфолио</h2>
+			<div class="portfolio__filters">
+				<label for="sort" class="sort-label">Сортировать по</label>
+				<select name="sort" id="sort" class="sort btn" ng-model="sortedBy">
+					<option class="sort__option" value="-date">Последним</option>
+					<option class="sort__option" value="header">Названию</option>
+					<option class="sort__option" value="date">Давним</option>
+				</select>
+				<label class="filter-label">Фильтер<input type="text" id="filter" name="filter" class="filter input" ng-model="filterBy"></label>
+			</div>
+			<div class="projects container">
+				<div class="project col" ng-repeat="project in data.portfolio | orderBy:sortedBy | filter:filterBy">
+					<div class="project-item" ng-click="showModal=true">
+						<img src="{{project.img}}" alt="{{project.header}}" class="project-item__img">
+						<h3 class="project-item__header">{{project.header}}</h3>
+					</div>
+					<div class="modal" ng-show="showModal">
+						<div class="modal__content">
+							<div class="modal__header">
+								<h3 class="modal__title">{{project.header}}</h3>
+								<button type="button" class="modal__close-btn" ng-click="showModal=false">x</button>
+							</div>
+							<img src="{{project.img}}" alt="{{project.header}}" class="modal__img">
+							<p class="modal__description" ng-bind-html="trust(project.description)"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- portfolio еnd -->
+		<!-- ================== -->
+
+		<!-- clients start -->
+		<!-- ================== -->
+		<section class="clients section">
+			<h2 class="clients__header">Клиенты</h2>
+			<div class="client clearfix">
+				<img src="./images/logo1.png" alt="Company 1" class="client__img">
+				<img src="./images/logo2.png" alt="Company 2" class="client__img">
+				<img src="./images/logo3.png" alt="Company 3" class="client__img">
+				<img src="./images/logo4.png" alt="Company 4" class="client__img">
+				<img src="./images/logo5.png" alt="Company 5" class="client__img">
+				<img src="./images/logo6.png" alt="Company 6" class="client__img">
+			</div>
+		</section>
+		<!-- clients еnd -->
+		<!-- ================== -->

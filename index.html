@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<!-- Angular Module -->
+<html lang="ru" ng-app="adAgency">
+	<head>
+		<title>Рекламное агенство "Возможно всё"</title> 
+		<meta charset="utf-8">
+
+		<!-- Mobile Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Font Awesome CSS -->
+		<link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+
+		<!-- Core css file -->
+		<link rel="stylesheet" href="./css/styles.css">
+	</head>
+	<body>
+
+		<!-- Angular templates -->
+		<div ui-view="header"></div>
+		
+		<!-- Autoscroll to the top of the page -->
+	    <div ui-view="home"></div>
+
+	    <div ui-view="services"></div>
+
+	    <div ui-view="portfolio"></div>
+
+	    <div ui-view="order"></div>
+
+	    <div ui-view="contacts"></div>
+	    
+	    <div ui-view="footer"></div>
+		
+		<!-- Jquery -->
+		<script src="./js/jquery.min.js"></script>
+
+		<!-- Angular JS -->
+		<script src="./node_modules/angular/angular.min.js"></script>
+		
+		<!-- Angular router -->
+		<script src="./node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+
+		<!-- Angular animation -->
+		<script src="./node_modules/angular-animate/angular-animate.js"></script>
+
+		<!-- Google map -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABQgNjejL4_QhKjnOCigFMfShxPZl_s04" async defer></script>
+
+		<!-- Angular app.js -->
+		<script src="./js/app.js"></script>
+
+		<!-- Angular controllers.js -->
+		<script src="./js/controllers.js"></script>
+
+		<!-- Angular services.js -->
+		<script src="./js/services.js"></script>
+
+	</body>
+</html>
