@@ -107,12 +107,15 @@ li {
 	list-style-type: none;
 }
 
+input, input:focus, button, button:focus {
+	outline: 0;
+}
+
 .input {
 	padding: 8px 5px;
 	border: 2px solid #898989;
 	border-radius: 6px;
 	box-shadow: -1px 1px 1px 1px rgba(0,0,0, 0.2) inset;
-	outline: 0;
 	&:focus {
 		border: 2px solid #339aea;
 	}
@@ -180,6 +183,7 @@ li {
 	width: 100%;
 	font-size: 1.3rem;
 	z-index: 1;
+	top: 0;
 }
 
 .menu-btn {
@@ -209,6 +213,10 @@ li {
 .logo-menu {
 	width: 100%; 
 	@include font(1.5rem, null, $caveat-serif, 2.5rem);
+}
+
+.logo-menu__link {
+	line-height: inherit !important;
 }
 
 .menu {
@@ -272,10 +280,13 @@ li {
 }
 
 .slider__wraper {
-	position: relative;
     overflow: hidden;
 	z-index: -1;
     white-space: nowrap;
+}
+
+.slider__slides {
+	position: relative;
 }
 
 .slider__slide {
@@ -500,13 +511,21 @@ li {
 	margin-bottom: 20px;
 }
 
-
-/* ***** Contacts ***** */
-.email__input {
-	@extend .order__input;
+.message-success {
+	margin-top: 40px;
+	width: 100%;
+	text-align: center;
+	@include font(1.8rem, null, $caveat-serif, 6.5rem);
+	background: #59ffc2;
+	border-radius: 6px;
 }
 
-.email__btn {
+.success {
+	margin: 0;
+}
+
+/* ***** Contacts ***** */
+.order__btn {
 	display: block;
 	margin: 10px auto 0;
 	padding: 5px 12%;
@@ -605,6 +624,51 @@ li {
 	text-align: center;
 	line-height: 4rem;
 	font-family: $kurale-serif;
+}
+
+/* ***** Search ***** */
+.search-section {
+	margin-top: 40px;
+}
+
+.search-results__item {
+	position: relative;
+	&:hover {
+		background: initial;
+		cursor: initial;
+	}
+}
+
+.search-results__header {
+	text-align: center;
+}
+
+.search-results__item-img {
+	margin-top: 65px;
+}
+
+.search-results__item-header {
+	position: absolute;
+	top: 0;
+}
+
+
+/* ***** Animation for ng-show, ng-hide ***** */
+.fade.ng-hide {
+  opacity: 0;
+}
+
+.fade.ng-hide-remove,
+.fade.ng-hide-add {
+  display: block !important;
+}
+
+.fade.ng-hide-remove {
+  transition: all linear 1000ms;
+}
+
+.fade.ng-hide-add {
+  transition: all linear 500ms;
 }
 
 
@@ -790,6 +854,15 @@ li {
 
 	.footer__copyright {
 		line-height: 5rem;
+	}
+
+	/* ***** Search ***** */
+	.search-section {
+		margin-top: 90px;
+	}
+
+	.search-results__item-img {
+		margin-top: 50px;
 	}
 }
 

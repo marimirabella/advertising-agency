@@ -6,15 +6,15 @@
 				<div class="nav-wrapper slide" ng-show="menuOpened">
 					<div class="logo-menu">
 						<!-- active class for current menu-item -->
-						<a ui-sref="app" class="logo-menu__link" ng-class="{ active: isActive('/') }">Рекламное агенство "Возможно всё"</a>
+						<a ui-sref="app" class="logo-menu__link menu__link" ng-class="{ active: isActive('/') }" ng-click="scrollOnClick('#home')">Рекламное агенство "Возможно всё"</a>
 					</div>
 					<ul class="menu">
-						<li class="menu__item"><a ui-sref="app.services" class="menu__link" ng-class="{ active: isActive('/services') }">Услуги</a></li>
-						<li class="menu__item"><a ui-sref="app.portfolio" class="menu__link" ng-class="{ active: isActive('/portfolio') }">Портфолио</a></li>
-						<li class="menu__item" ng-mouseover="overSubmenu()" ng-mouseleave="hideSubmenu()"><a ui-sref="app.order" class="menu__link" ng-class="{ active: isActive('/order') || isActive('/contacts')}">Контакты</a>
+						<li class="menu__item"><a ui-sref="app.services" class="menu__link" ng-class="{ active: isActive('/services') }" ng-click="scrollOnClick('#services')">Услуги</a></li>
+						<li class="menu__item"><a ui-sref="app.portfolio" class="menu__link" ng-class="{ active: isActive('/portfolio') }" ng-click="scrollOnClick('#portfolio')">Портфолио</a></li>
+						<li class="menu__item" ng-mouseover="overSubmenu()" ng-mouseleave="hideSubmenu()"><a ui-sref="app.order" class="menu__link" ng-class="{ active: isActive('/order') || isActive('/contacts')}" ng-click="scrollOnClick('#order')">Контакты</a>
 							<ul class="submenu animate-show-hide">
-								<li class="submenu__item"><a ui-sref="app.order" class="submenu__link" ng-class="{ active: isActive('/order') }">Оформить заказ</a></li>
-								<li class="submenu__item"><a ui-sref="app.contacts" class="submenu__link" ng-class="{ active: isActive('/contacts') }">Карта</a></li>
+								<li class="submenu__item"><a ui-sref="app.order" class="submenu__link" ng-class="{ active: isActive('/order') }" ng-click="scrollOnClick('#order')">Оформить заказ</a></li>
+								<li class="submenu__item"><a ui-sref="app.contacts" class="submenu__link" ng-class="{ active: isActive('/contacts') }" ng-click="scrollOnClick('#contacts')">Карта</a></li>
 							</ul>
 						</li>
 					</ul>

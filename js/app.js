@@ -6,12 +6,12 @@ angular.module('adAgency', ['ui.router', 'ngAnimate'])
 		var NG_HIDE_CLASS = 'ng-hide';
 		return {
 			beforeAddClass: function(element, className, done) {
-				if(className === NG_HIDE_CLASS) {
+				if (className === NG_HIDE_CLASS) {
 					element.slideUp(done);
 				}
 			},
 			removeClass: function(element, className, done) {
-				if(className === NG_HIDE_CLASS) {
+				if (className === NG_HIDE_CLASS) {
 					element.hide().slideDown(done);
 				}
 			}
@@ -22,7 +22,7 @@ angular.module('adAgency', ['ui.router', 'ngAnimate'])
 	.config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
         
-			// route for home page
+            // route for home page
             .state('app', {
                 url:'/',
                 views: {
@@ -44,7 +44,7 @@ angular.module('adAgency', ['ui.router', 'ngAnimate'])
                     },
                     'order': {
                         templateUrl : 'views/order.html',
-                        controller  : 'initMapController'
+                        controller  : 'mainController'
                     },
                     'contacts': {
                         templateUrl : 'views/contacts.html',
@@ -74,35 +74,32 @@ angular.module('adAgency', ['ui.router', 'ngAnimate'])
             // route for contacts page
             .state('app.contacts', {
                 url:'contacts'
+            })
+
+            // route for search page
+            .state('app.search', {
+                url: 'search',
+                views: {
+                    'home@': {
+                        templateUrl : 'views/search.html',
+                        controller  : 'mainController'
+                    },
+                    'services@': {
+                        templateUrl : '',
+                    },
+                    'portfolio@': {
+                        templateUrl : '',
+                    },
+                    'order@': {
+                        templateUrl : '',
+                    },
+                    'contacts@': {
+                        templateUrl : '',
+                    }
+                }
             });
     
         $urlRouterProvider.otherwise('/');
     })
-
-    // On changing location scroll to element
-    .run(function ($rootScope, $state, $stateParams, $location) {
-        $rootScope.$on('$locationChangeSuccess', function () {
-
-            // Replacement of / to #
-            var element = $location.url() === '/' ? $('#home') : $('#' + $location.url().replace('/', ''));
-
-            if(element.length > 0) {
-
-                // Smooth scroll and offset
-                element[0].scrollIntoView({ block: 'start', behavior: 'smooth' });
-
-                if($(window).width() < 768){
-                    $('html,body').animate({
-                        scrollTop: element[0].offsetTop+10
-                    }, 1000);
-                }
-                else {
-                    $('html,body').animate({
-                        scrollTop: element[0].offsetTop-90
-                    }, 1000);
-                }
-            }    
-        });
-    });
 ;
 

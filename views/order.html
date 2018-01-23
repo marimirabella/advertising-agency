@@ -1,13 +1,18 @@
 		<!-- order start -->
 		<!-- ================== -->
-		<section id="order" class="order section">
+		<section id="order" class="order section js-section">
 			<h2 class="order__header">Оформить заказ</h2>
 			<h3 class="order__info">Заполните форму и мы сразу свяжемся с Вами</h3>
-			<input type="text" placeholder="Ваше имя" class="order__input input"><br>
-			<input type="tel" placeholder="Ваш телефон" class="order__input input"><br>
-			<input type="email" placeholder="Ваш Email" class="order__input input"><br>
-			<textarea cols="30" rows="10" placeholder="Введите сообщение" class="email__input input"></textarea><br>
-			<input type="submit" value="Отправить" class="email__btn btn submit-btn">
+			<form class="order__form" name="orderForm" ng-submit="submitOrder()">
+				<input type="text" name="name" placeholder="Ваше имя" ng-model="neworder.name" class="order__input input" required><br>
+				<input type="tel" name="tel" ng-model="neworder.tel" placeholder="Ваш телефон" class="order__input input" required><br>
+				<input type="email" name="email" ng-model="neworder.email" placeholder="Ваш Email" class="order__input input" required><br>
+				<textarea name="message" cols="30" rows="10" placeholder="Введите сообщение" ng-model="neworder.message" class="order__input input" required></textarea><br>
+				<input type="submit" name="submit-btn" value="Отправить" class="order__btn btn">
+			</form>
+			<div class="message-success fade" ng-show="success">
+				<p class="success">Ваше сообщение отправлено!</p>
+			</div>
 		</section>
 		<!-- order end -->
 		<!-- ================== -->

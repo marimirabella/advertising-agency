@@ -1,0 +1,23 @@
+		<!-- search section start -->
+		<!-- ================== -->
+		<section class="search-section container" id="search">
+			<div class="search-results" ng-show="mainService.results">
+				<h2 class="search-results__header">Результаты поиска</h2>
+				<div class="service" ng-repeat="service in data.services | filter:mainService.search">
+					<div class="service-item search-results__item">
+						<h3 class="service-item__header search-results__item-header">{{service.header}}</h3>
+						<img src="{{service.img}}" alt="{{service.header}}" class="service-item__img search-results__item-img">
+						<p class="service__description" ng-bind-html="trust(service.description)"></p>
+					</div>
+				</div>
+				<div class="project" ng-repeat="project in data.portfolio | filter:mainService.search">
+					<div class="project-item search-results__item">
+						<h3 class="project-item__header search-results__item-header">{{project.header}}</h3>
+						<img src="{{project.img}}" alt="{{project.header}}" class="project-item__img search-results__item-img">
+						<p class="project__description" ng-bind-html="trust(project.description)"></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- search section end -->
+		<!-- ================== -->
